@@ -47,25 +47,25 @@ class UserController extends Zend_Controller_Action
     	// Nothing here yet
     }
 
-	public function registerAction() {
-		$request = $this->getRequest();
-		$form    = new Application_Form_Login();
-
-		if ($this->getRequest()->isPost()) {
-			if ($form->isValid($request->getPost())) {
-				/* add code to register user, output some details,
-				 * email them a confirmation, or redirect */
-				return  $this->_helper->redirector('welcome');
-			}
+    public function registerAction() {
+	$request = $this->getRequest();
+	$form    = new Application_Form_Login();
+	
+	if ($this->getRequest()->isPost()) {
+		if ($form->isValid($request->getPost())) {
+			/* add code to register user, output some details,
+			* email them a confirmation, or redirect */
+			return  $this->_helper->redirector('welcome');
 		}
-
-		$this->view->form = $form;
 	}
-
-	public function confirmAction() {
-		// Nothing here yet
-		// One would add code to confirm email and display a welcome message
-	}
+	
+	$this->view->form = $form;
+     }
+	
+    public function confirmAction() {
+	// Nothing here yet
+	// One would add code to confirm email and display a welcome message
+    }
 
     public function profileAction(){
 
